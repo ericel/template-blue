@@ -50,11 +50,12 @@
     border-top: 2px solid #212121;
     transition: all .3s ease;
     cursor: pointer;
+    box-shadow: 0 10px 16px rgba(0,0,0,.2) !important;
 }
 
 .home-fancy-card:hover {
     border-top: 2px solid #326c9e;
-    box-shadow: 0 10px 16px rgba(0,0,0,.2) !important;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12) !important;
 }
 .home-fancy-card:hover [mat-card-icon] {
     color: #326c9e;

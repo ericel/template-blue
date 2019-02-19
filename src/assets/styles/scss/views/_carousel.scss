@@ -94,7 +94,7 @@
     white-space: nowrap;
     overflow: auto;
     box-sizing: border-box;
-    bottom: 10px;
+    top: 85% !important;
     width: 100%;
   }
   .myPoint  li {
@@ -156,12 +156,9 @@
     font-weight: 400;
     line-height: 32px;
   }
-  .intro-list {
-    margin: 0 0 40px;
-  }
+
   .intro-product {
     position: relative;
-    top: 60px;
     left: 60px;
   }
   .intro-product-link {

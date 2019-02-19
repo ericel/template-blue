@@ -1,42 +1,32 @@
 <ngu-carousel class="slider" #myCarousel [inputs]="carouselOptions" [dataSource]="items">
 
-  <ngu-tile *nguCarouselDef="let item; let i = index; let ani = animate" [@slider]="ani" > <!--  PLease this animation to this tile to see animation. stackblitz have error with animations -->
+  <ngu-tile *nguCarouselDef="let item; let i = index; let ani = animate" [@slider]="ani" >
  
     <div class="slider-bg" [ngStyle]="{ 'background-image': 'url(' + item.image + ')'}">
       <div class="slider-content">
           <div class="mat-bg-primary slider-overlay"></div>
           <div class="pt-carousel"></div>
           <div class="container pb-3" fxLayout="row" fxLayout.lt-md="column" fxLayoutWrap="nowrap" fxLayoutGap="30px">
-              <div fxFlex="100">
+              <div fxFlex="60">
                 <h1 class="home-intro-title" data-wow-delay="0.5s" class="col wow bounce">{{item.title}}</h1>
                 <div class="home-intro-desc">
                   {{item.subtitle}}<br>
                   {{item.text}}
                 </div>
-               <!--
-                <div class="intro-list text-center" fxLayout="column" fxLayoutGap="30px">
-                  <div fxFlex="100">
-                    <mat-icon color="accent">check</mat-icon><span fxFlex="20px"></span> 100+ Custom Pipes, Directives And Components</div>
-                  <div fxFlex="100">
-                    <mat-icon color="accent">check</mat-icon><span fxFlex="20px"></span> 4 color Themes and multi language support</div>
-                  <div fxFlex="100">
-                    <mat-icon color="accent">check</mat-icon><span fxFlex="20px"></span> Super Flexible And Customizable</div>
-                </div>
-                -->
-                <div fxLayout="row" fxLayout.lt-sm="column" class="text-center">
-                  <button mat-raised-button mat-lg-button color="primary" (click)="buyEgret()"><mat-icon>add_shopping_cart</mat-icon> BUY ANGULAR BLUE</button>
-                  <span fxFlex="20px"></span>
-                  <button mat-raised-button mat-lg-button id="frontend-btn" (click)="getNGLanding()"><mat-icon>get_app</mat-icon> Documentations</button>
+                <div fxLayout="row" fxLayout.lt-sm="column">
+                  <ng-container *ngFor="let a of item.actions" >
+                    <a mat-raised-button mat-lg-button  color="{{a.color}}" ><mat-icon *ngIf="a.icon">{{a.icon}}</mat-icon> {{a.action}}</a>
+                    <span fxFlex="20px"></span>
+                  </ng-container>
                 </div>
               </div>
-              <span fxFlex.lt-md="30px" fxFlex="0"></span>
-              <!--
-              <div fxFlex="50">
-                <div class="intro-product">
-                  <img mat-card-image src="assets/images/iphone1.png" [style.margin]="'0 !important'">
-                </div>
+              
+              <div fxFlex="40" >
+                <mat-card>
+                    <img mat-card-image src="assets/images/iphone.png" [style.margin]="'0 !important'">
+
+                </mat-card>
               </div>
-              -->
             </div>
       </div>
 

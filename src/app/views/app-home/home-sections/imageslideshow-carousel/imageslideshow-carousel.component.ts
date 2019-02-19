@@ -18,10 +18,18 @@ export class ImageslideshowCarouselComponent implements OnInit {
     text: `Lorem ipsum dolor sit amet conse ctetur adipi sicing elit. Doloribus numquam quis.`,
     title: 'ANGULAR BLUE SINCE 2019. Awesomeness of the web',
     subtitle: 'Lorem ipsum dolor sit amet conse ctetur',
-    features: [
-      '100+ Custom Pipes, Directives And Components', 
-      '4 color Themes and multi language support',
-      'Super Flexible And Customizable'
+    actions: [
+      {
+        action: 'Download App',
+        state: 'downloadapp',
+        color: 'primary',
+        icon: 'get_app'
+      },
+      {
+        action: 'Live Demo',
+        state: 'demolink',
+        color: 'default'
+      }
     ]
   },
   {
@@ -30,10 +38,13 @@ export class ImageslideshowCarouselComponent implements OnInit {
     text: `Lorem ipsum dolor sit amet conse ctetur adipi sicing elit. Doloribus numquam quis.`,
     title: 'WHY US - AWESOMENESS! We build for the future and present',
     subtitle: 'Lorem ipsum dolor sit amet conse ctetur',
-    features: [
-      '100+ Custom Pipes, Directives And Components', 
-      '4 color Themes and multi language support',
-      'Super Flexible And Customizable'
+    actions: [
+      {
+        action: 'Contact Us',
+        state: 'contact-section',
+        color: 'warn',
+        icon: 'phone'
+      }
     ]
   },
   {
@@ -42,10 +53,13 @@ export class ImageslideshowCarouselComponent implements OnInit {
     text: `Lorem ipsum dolor sit amet conse ctetur adipi sicing elit. Doloribus numquam quis.`,
     title: 'WHAT THEY ARE SAYING - AWESOMENESS AND WEBENESS',
     subtitle: 'Lorem ipsum dolor sit amet conse ctetur',
-    features: [
-      '100+ Custom Pipes, Directives And Components', 
-      '4 color Themes and multi language support',
-      'Super Flexible And Customizable'
+    actions: [
+      {
+        action: 'View Reviews',
+        state: 'testimonails-section',
+        color: 'accent',
+        icon: 'comment'
+      }
     ]
   }
 ]
