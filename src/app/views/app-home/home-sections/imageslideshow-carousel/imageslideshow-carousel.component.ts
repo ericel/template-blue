@@ -17,21 +17,36 @@ export class ImageslideshowCarouselComponent implements OnInit {
     image: 'assets/images/slides/slide1.jpg',
     text: `Lorem ipsum dolor sit amet conse ctetur adipi sicing elit. Doloribus numquam quis.`,
     title: 'ANGULAR BLUE SINCE 2019. Awesomeness of the web',
-    subtitle: 'Prosper With Business Application'
+    subtitle: 'Lorem ipsum dolor sit amet conse ctetur',
+    features: [
+      '100+ Custom Pipes, Directives And Components', 
+      '4 color Themes and multi language support',
+      'Super Flexible And Customizable'
+    ]
   },
   {
     icon: 'pages',
     image: 'assets/images/slides/slide2.jpg',
     text: `Lorem ipsum dolor sit amet conse ctetur adipi sicing elit. Doloribus numquam quis.`,
-    title: 'WHY US - AWESOMENESS! We build for the future.',
-    subtitle: 'Lorem ipsum dolor sit amet conse ctetur'
+    title: 'WHY US - AWESOMENESS! We build for the future and present',
+    subtitle: 'Lorem ipsum dolor sit amet conse ctetur',
+    features: [
+      '100+ Custom Pipes, Directives And Components', 
+      '4 color Themes and multi language support',
+      'Super Flexible And Customizable'
+    ]
   },
   {
     icon: 'send',
     image: 'assets/images/slides/slide3.jpg',
     text: `Lorem ipsum dolor sit amet conse ctetur adipi sicing elit. Doloribus numquam quis.`,
-    title: 'WHAT THEY ARE SAYING - AWESOMENESS',
-    subtitle: 'Conse ctetur adipi sicing elit. Doloribus numquam quis.'
+    title: 'WHAT THEY ARE SAYING - AWESOMENESS AND WEBENESS',
+    subtitle: 'Lorem ipsum dolor sit amet conse ctetur',
+    features: [
+      '100+ Custom Pipes, Directives And Components', 
+      '4 color Themes and multi language support',
+      'Super Flexible And Customizable'
+    ]
   }
 ]
 

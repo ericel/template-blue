@@ -27,10 +27,12 @@
     .slider-content {
       position: relative;
       z-index: 99;
-      height: auto;
+      height: 100%;
+      padding: 6rem 0;
       //display: flex;
       //align-items: center;
       //justify-content: center;
+      //padding: 6rem inherit;
       color: #ffffff;
       overflow: hidden;
       .container{
@@ -45,8 +47,11 @@
       }
     }
 
-    .pt-carousel {padding-top: 9rem}
+    .pt-carousel {padding-top: 4.5rem}
      @media (max-width: 992px){
+      .slider-content {
+        padding: 2rem 0;
+      }
       .pt-carousel {
           padding-top: 4rem;
       }

@@ -6,9 +6,11 @@ import { BrowserWindowRef, windowProvider, browserWindowProvider } from './servi
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule, MatButtonModule, MatListModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
+import { ScrollToDirective } from './directives/scroll-to.directive';
 const appComponents = [
   HeaderComponent,
-  FooterComponent
+  FooterComponent,
+  ScrollToDirective
 ];
 @NgModule({
   declarations: appComponents,
