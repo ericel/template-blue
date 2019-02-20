@@ -56,7 +56,7 @@ export class ImageslideshowCarouselComponent implements OnInit {
     actions: [
       {
         action: 'View Reviews',
-        state: 'testimonails-section',
+        state: 'testimonials-section',
         color: 'accent',
         icon: 'comment'
       }

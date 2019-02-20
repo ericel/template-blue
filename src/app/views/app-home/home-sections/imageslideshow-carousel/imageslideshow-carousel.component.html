@@ -1,44 +1,44 @@
 <ngu-carousel class="slider" #myCarousel [inputs]="carouselOptions" [dataSource]="items">
-
   <ngu-tile *nguCarouselDef="let item; let i = index; let ani = animate" [@slider]="ani" >
- 
-    <div class="slider-bg" [ngStyle]="{ 'background-image': 'url(' + item.image + ')'}">
-      <div class="slider-content">
-          <div class="mat-bg-primary slider-overlay"></div>
-          <div class="pt-carousel"></div>
-          <div class="container pb-3" fxLayout="row" fxLayout.lt-md="column" fxLayoutWrap="nowrap" fxLayoutGap="30px">
-              <div fxFlex="60">
-                <h1 class="home-intro-title" data-wow-delay="0.5s" class="col wow bounce">{{item.title}}</h1>
-                <div class="home-intro-desc">
-                  {{item.subtitle}}<br>
-                  {{item.text}}
-                </div>
-                <div fxLayout="row" fxLayout.lt-sm="column">
-                  <ng-container *ngFor="let a of item.actions" >
-                    <a mat-raised-button mat-lg-button  color="{{a.color}}" ><mat-icon *ngIf="a.icon">{{a.icon}}</mat-icon> {{a.action}}</a>
+  <div class="slider-bg" [ngStyle]="{ 'background-image': 'url(' + item.image + ')'}">
+     <div class="slider-content">
+        <div class="mat-bg-primary slider-overlay"></div>
+        <div class="pt-carousel"></div>
+        <div class="container pb-3" fxLayout="row" fxLayout.lt-md="column" fxLayoutWrap="nowrap" fxLayoutGap="30px">
+           <div fxFlex="60">
+              <h1 class="home-intro-title" data-wow-delay="0.5s" class="col wow bounce">{{item.title}}</h1>
+              <div class="home-intro-desc">
+                 {{item.subtitle}}<br>
+                 {{item.text}}
+              </div>
+              <div fxLayout="row" fxLayout.lt-sm="column">
+                 <ng-container *ngFor="let a of item.actions" >
+                    <a mat-raised-button mat-lg-button   color="{{a.color}}" [scrollTo]="a.state">
+                       <mat-icon *ngIf="a.icon">{{a.icon}}</mat-icon>
+                       {{a.action}}
+                    </a>
                     <span fxFlex="20px"></span>
-                  </ng-container>
-                </div>
+                 </ng-container>
               </div>
-              
-              <div fxFlex="40" >
-                <mat-card>
-                    <img mat-card-image src="assets/images/iphone.png" [style.margin]="'0 !important'">
-
-                </mat-card>
-              </div>
-            </div>
-      </div>
-
-    </div>
-     
+           </div>
+           <div fxFlex="40" >
+              <mat-card>
+                 <!--Any Content can go here even forms-->
+                 <img data-wow-delay="0.5s" class="col wow rollIn" mat-card-image src="assets/images/iphone.png" [style.margin]="'0 !important'">
+              </mat-card>
+           </div>
+        </div>
+     </div>
+  </div>
   </ngu-tile>
-
-      <button mat-icon-button color="primary" NguCarouselPrev class="leftRs" [style.opacity]="myCarousel.isFirst ? 0.5:1"><mat-icon>keyboard_arrow_left</mat-icon></button>
-      <button mat-icon-button color="primary" NguCarouselNext class="rightRs" [style.opacity]="myCarousel.isLast ? 0.5:1"><mat-icon>keyboard_arrow_right</mat-icon></button>
-
-    <ul class="myPoint" NguCarouselPoint>
-        <li *ngFor="let i of myCarousel.pointNumbers; let i = index" class="mat-bg-primary" [class.active]="i==myCarousel.activePoint" (click)="myCarousel.moveTo(i)"
-          [style.background]="'url(' + items[i] + ')'"></li>
-      </ul>
-</ngu-carousel>
+  <button mat-icon-button color="primary" NguCarouselPrev class="leftRs" [style.opacity]="myCarousel.isFirst ? 0.5:1">
+     <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+  <button mat-icon-button color="primary" NguCarouselNext class="rightRs" [style.opacity]="myCarousel.isLast ? 0.5:1">
+     <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+  <ul class="myPoint" NguCarouselPoint>
+     <li *ngFor="let i of myCarousel.pointNumbers; let i = index" class="mat-bg-primary" [class.active]="i==myCarousel.activePoint" (click)="myCarousel.moveTo(i)"
+     [style.background]="'url(' + items[i] + ')'"></li>
+  </ul>
+  </ngu-carousel>

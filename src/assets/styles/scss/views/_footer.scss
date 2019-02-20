@@ -1,3 +1,11 @@
+footer {
+  position: relative;
+  .back-to-top {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+  }
+}
 .home-footer-top {
     background-color: #212121;
     color: #ffffff !important;

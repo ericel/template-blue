@@ -7,6 +7,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule, MatButtonModule, MatListModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { ScrollToDirective } from './directives/scroll-to.directive';
+import { AlertService } from './services/alert.service';
 const appComponents = [
   HeaderComponent,
   FooterComponent,
@@ -27,6 +28,7 @@ const appComponents = [
     BrowserWindowRef,
     windowProvider,
     browserWindowProvider,
+    AlertService
   ]
 })
 export class SharedModule { }

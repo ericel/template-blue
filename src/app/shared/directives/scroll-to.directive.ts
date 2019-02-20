@@ -1,27 +1,34 @@
-import { Directive, ElementRef, Attribute, OnInit, HostListener } from '@angular/core';
+import { Directive, ElementRef, Attribute, OnInit, HostListener, Input } from '@angular/core';
 
-@Directive({ selector: '[scrollTo]' })
+@Directive({
+  selector: '[scrollTo]'
+})
 export class ScrollToDirective implements OnInit {
-  constructor( @Attribute('scrollTo') public elmID: string, private el: ElementRef) { }
+  @Input('scrollTo') elmID: string;
+  constructor( 
+    //@Attribute('scrollTo') public elmID: string, 
+    private el: ElementRef
+    ) { }
 
   ngOnInit() {}
 
   currentYPosition() {
     // Firefox, Chrome, Opera, Safari
-    if (self.pageYOffset) return self.pageYOffset;
+    if (self.pageYOffset){ return self.pageYOffset; }
     // Internet Explorer 6 - standards mode
-    if (document.documentElement && document.documentElement.scrollTop)
+    if (document.documentElement && document.documentElement.scrollTop){
       return document.documentElement.scrollTop;
+    }
     // Internet Explorer 6, 7 and 8
-    if (document.body.scrollTop) return document.body.scrollTop;
+    if (document.body.scrollTop) { return document.body.scrollTop; }
     return 0;
-  };
+  }
 
   elmYPosition(eID) {
-    var elm = document.getElementById(eID);
-    var y = elm.offsetTop;
-    var node: any = elm;
-    while (node.offsetParent && node.offsetParent != document.body) {
+    const elm = document.getElementById(eID);
+    let y = elm.offsetTop;
+    let node: any = elm;
+    while (node.offsetParent && node.offsetParent !== document.body) {
       node = node.offsetParent;
       y += node.offsetTop;
     }
@@ -30,35 +37,36 @@ export class ScrollToDirective implements OnInit {
 
   @HostListener('click', ['$event'])
   smoothScroll() {
-    if(!this.elmID)
+    if(!this.elmID){
       return;
-    var startY = this.currentYPosition();
-    var stopY = this.elmYPosition(this.elmID);
-    var distance = stopY > startY ? stopY - startY : startY - stopY;
+    }
+    const startY = this.currentYPosition();
+    const stopY = this.elmYPosition(this.elmID);
+    const distance = stopY > startY ? stopY - startY : startY - stopY;
     if (distance < 100) {
       scrollTo(0, stopY);
       return;
     }
-    var speed = Math.round(distance / 50);
-    if (speed >= 20) speed = 20;
-    var step = Math.round(distance / 25);
-    var leapY = stopY > startY ? startY + step : startY - step;
-    var timer = 0;
+    let speed = Math.round(distance / 50);
+    speed = speed >= 20 ? 20 : speed;
+    const step = Math.round(distance / 25);
+    let leapY = stopY > startY ? startY + step : startY - step;
+    let timer = 0;
     if (stopY > startY) {
-      for (var i = startY; i < stopY; i += step) {
-        setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
+      for (let i = startY; i < stopY; i += step) {
+        setTimeout('window.scrollTo(0, ' + leapY + ')', timer * speed);
         leapY += step;
-        if (leapY > stopY) leapY = stopY;
+        leapY = (leapY > stopY) ? stopY : leapY;
         timer++;
       }
       return;
     }
-    for (var i = startY; i > stopY; i -= step) {
-      setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
+    for (let i = startY; i > stopY; i -= step) {
+      setTimeout('window.scrollTo(0, ' + leapY + ')', timer * speed);
       leapY -= step;
-      if (leapY < stopY) leapY = stopY;
+      leapY = (leapY < stopY) ? stopY : leapY;
       timer++;
     }
     return false;
-  };
+  }
 }

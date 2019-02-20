@@ -20,6 +20,7 @@ import { AvailableonSectionComponent } from './home-sections/availableon-section
 import { ContactSectionComponent } from './home-sections/contact-section/contact-section.component';
 import { TestimonialsSectionComponent } from './home-sections/testimonials-section/testimonials-section.component';
 
+
 @NgModule({
   declarations: [
     AppHomeComponent,
