@@ -23,12 +23,14 @@ export class ImageslideshowCarouselComponent implements OnInit {
         action: 'Download App',
         state: 'downloadapp',
         color: 'primary',
-        icon: 'get_app'
+        icon: 'get_app',
+        link: '#'
       },
       {
         action: 'Live Demo',
-        state: 'demolink',
-        color: 'default'
+        state: '',
+        color: 'default',
+        link: 'https://stackoverflow.com/questions/2939914/how-do-i-vertically-align-text-in-a-div'
       }
     ]
   },
@@ -43,7 +45,8 @@ export class ImageslideshowCarouselComponent implements OnInit {
         action: 'Contact Us',
         state: 'contact-section',
         color: 'warn',
-        icon: 'phone'
+        icon: 'phone',
+        link: '#'
       }
     ]
   },
@@ -58,7 +61,8 @@ export class ImageslideshowCarouselComponent implements OnInit {
         action: 'View Reviews',
         state: 'testimonials-section',
         color: 'accent',
-        icon: 'comment'
+        icon: 'comment',
+        link: '#'
       }
     ]
   }

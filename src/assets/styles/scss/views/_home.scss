@@ -1,4 +1,6 @@
-
+.home-app {
+    min-height: 100vh;
+}
 .section-content{
     padding-top: 90px;
     padding-bottom: 50px;
@@ -26,7 +28,7 @@
     left: 0px;
     width: 60px;
     height: 1px;
-    background-color: #ffc107;
+    background-color: #094276;
 }
 
 @media (max-width: 992px){
@@ -110,7 +112,7 @@
 }
 .available-on-item {
     text-align: center;
-    border-left: 1px solid #0F1217;
+    border-left: 1px solid #094276;
     position: relative;
     transition: all 1s;
     -moz-transition: all 1s;

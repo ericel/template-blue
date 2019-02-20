@@ -13,7 +13,7 @@
               </div>
               <div fxLayout="row" fxLayout.lt-sm="column">
                  <ng-container *ngFor="let a of item.actions" >
-                    <a mat-raised-button mat-lg-button   color="{{a.color}}" [scrollTo]="a.state">
+                    <a mat-raised-button mat-lg-button   color="{{a.color}}" [scrollTo]="a.state" href="{{a.link}}">
                        <mat-icon *ngIf="a.icon">{{a.icon}}</mat-icon>
                        {{a.action}}
                     </a>
